@@ -1,83 +1,51 @@
 <html>
-    <head>Firebase Storage Download File</head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <body>
+  <body>
+    <div>
+      <center>
+        <h2>My Personal file</h2>
         <div>
-            <h2 class="">Download a file</h2>
-            <div>
-                <p>Enter file name in the below text box to generate download link</p>
-                <h6>File Name</h6>
-                <input type="text" id="file" name="file"/>
-                <input type="button" value="Generate" onclick="generateDownloadLink()"/>
-                <h6>File URL:</h6>
-                <span id="linkbox"></span>
-                <span id="Files"></span>
-            </div>
+          <span id="Files"></span>
         </div>
-                          
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
-       
-        <!-- Add Firebase products that you want to use -->
-        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-storage.js"></script>
-        
-        <script src="init-firebase.js"></script>
+      </center>
+    </div>
 
-        <script>
-            var auth = firebase.auth();
-            var storageRef = firebase.storage().ref();
-            
-            function generateDownloadLink() {
-                var fileName = document.getElementById("file").value;
-                storageRef.child("images/" + fileName).getDownloadURL().then(function (url) {
-                    document.getElementById('linkbox').innerHTML = '<a href="' + url + '">' + url + '</a>';
-                }).catch(function (error) {
-                    console.log(error);
-                    document.getElementById('linkbox').innerHTML = error.code;
-                });
-            }
-            
-            window.onload = function () {
-                // Create a reference under which you want to list
-            var listRef = storageRef.child('images');
-             var i=0;
-        // Find all the prefixes and items.
-             listRef.listAll().then(function(res) {
-            res.items.forEach(function(itemRef) {
-             i++
-            displayImage(i,itemRef);
-         });
-        }).catch(function(error) {
-        // Uh-oh, an error occurred!
-        });
-        function displayImage(row,images){
-           console.log(images.name)
-            images.getDownloadURL().then(function(url){
-                console.log(images);
-                console.log(url)
-                let new_html ="";
-                new_html+='<a href="' + url + '">' + images.name+"</br>" + '</a>';
-                $('#Files').append(new_html);
-            })
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-storage.js"></script>
+
+    <script src="init-firebase.js"></script>
+
+    <script>
+      var storageRef = firebase.storage().ref();
+
+      window.onload = function () {
+        var listRef = storageRef.child("images");
+        var i = 0;
+
+        listRef
+          .listAll()
+          .then(function (res) {
+            res.items.forEach(function (itemRef) {
+              i++;
+              displayImage(i, itemRef);
+            });
+          })
+          .catch(function (error) {});
+        function displayImage(row, images) {
+          console.log(images.name);
+          images.getDownloadURL().then(function (url) {
+            console.log(images);
+            console.log(url);
+            let new_html = "";
+            new_html +=
+              '<a href="' + url + '">' + images.name + "</br><p>" + "</a>";
+            $("#Files").append(new_html);
+          });
         }
-                auth.onAuthStateChanged(function (user) {
-                    if (user) {
-                        console.log('Anonymous user signed-in.', user);
-                    } else {
-                        console.log('There was no anonymous session. Creating a new anonymous user.');
-                        // Sign the user in anonymously since accessing Storage requires the user to be authorized.
-                        auth.signInAnonymously().catch(function (error) {
-                            if (error.code === 'auth/operation-not-allowed') {
-                                window.alert('Anonymous Sign-in failed. Please make sure that you have enabled anonymous ' +
-                                        'sign-in on your Firebase project.');
-                            }
-                        });
-                    }
-                });
-            }
-     
-        </script>
-    </body>
+      };
+    </script>
+  </body>
 </html>
