@@ -2,7 +2,7 @@
 
 var firebaseConfig = {
  
-    apiKey: "AIzaSyA8t_Ss-J5uTWm9ZiQ5vjk5XqzjLm38DDQ",
+    apiKey: "AIzaSyCWi8GBzrPY_q9UZUIc4PhrODhFz3Vvwo8",
     authDomain: "slackanshu.firebaseapp.com",
     databaseURL: "https://slackanshu.firebaseio.com",
     projectId: "slackanshu",
