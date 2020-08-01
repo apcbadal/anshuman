@@ -1,0 +1,188 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firebase Storage Upload File</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/contactus.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+    <script src="init-firebase.js"></script>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+      <h4>Anshuman Badal</h4>
+      </div>
+      <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/">About</a></li>
+      <li><a href="/">Projects</a></li>
+      <li><a href=#btnOpenForm id="btnOpenForm">Contact</a></li>
+      <li><a href="login.html">Login</a></li>
+      </ul>
+      <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+      </div>
+      </nav>
+        <div class="login">
+        <div class="login-triangle"></div>
+        <h2 class="login-header">Log in</h2>
+        <div class="login-container">
+        <p><input type="email" id="email"placeholder="Email"></p>
+        <p><input type="password"id="password" placeholder="Password"></p>
+        <p><input type="submit"onclick="login()"value="Log in"></input></p>
+     </div>
+     </div>
+     <div class="form-popup-bg">
+      <div class="form-container">
+      <button id="btnCloseForm" class="close-button">X</button>
+      <h1>Contact Us</h1>
+      <p>For more information. Please complete this form.</p>
+      <form>
+      <div class="form-group">
+      <label for="">Name</label>
+      <input type="text" class="form-control"id="contactName" />
+      </div>
+      <div class="form-group">
+      <label for="">E-Mail Address</label>
+      <input class="form-control" type="text" id="contactEmail"/>
+      </div>
+      <div class="form-group">
+      <label for="">Phone Number</label>
+      <input class="form-control" type="text"id="contactPhone" />
+      </div>
+      <div class="form-group">
+        <label for="">Your Query</label>
+        <textarea class="form-control" type="textarea"id="contactQuery" ></textarea>
+        </div>
+      <input type="submit" onclick="checkCondition()"></input>
+      </form>
+      </div>
+      </div>
+    
+     </body>
+     </html>
+     <script>
+         function login() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        firebase
+          .auth()
+          .signInWithEmailAndPassword(email, password)
+          .then(function () {
+            firebase.auth().onAuthStateChanged(function (user) {
+              if (user) {
+                // User is signed in.
+                console.log(user.uid);
+                //console.log()
+                window.location.href="uploadfile.html?email="+email+"&password="+password;
+              } else {
+                // User is signed out.
+                // ...
+              }
+            });
+          })
+          .catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
+          });
+      }
+      const navSlide = () => {
+  const burger = document.querySelector(".burger");
+  const nav = document.querySelector(".nav-links");
+  const navLinks = document.querySelectorAll(".nav-links li");
+
+  //Toggle Nav
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("nav-active");
+
+    //Animate Links
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = "";
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${
+          index / 7 + 0.5
+        }s`;
+      }
+    });
+
+    //burger animation
+    burger.classList.toggle("toggle");
+  });
+};
+
+navSlide();
+function closeForm() {
+  $(".form-popup-bg").removeClass("is-visible");
+}
+
+$(document).ready(function ($) {
+  /* Contact Form Interactions */
+  $("#btnOpenForm").on("click", function (event) {
+    event.preventDefault();
+
+    $(".form-popup-bg").addClass("is-visible");
+  });
+
+  //close popup when clicking x or off popup
+  $(".form-popup-bg").on("click", function (event) {
+    if (
+      $(event.target).is(".form-popup-bg") ||
+      $(event.target).is("#btnCloseForm")
+    ) {
+      event.preventDefault();
+      $(this).removeClass("is-visible");
+    }
+  });
+});
+function checkCondition(){
+  event.preventDefault();
+  if(document.getElementById("contactName").value!=0){
+    if(document.getElementById("contactEmail").value!=0){
+      if(document.getElementById("contactPhone").value!=0){
+        if(document.getElementById("contactQuery").value!=0){
+          contact();
+        }
+        else{
+          alert("Query can't be blank !")
+        }
+      }else{
+        alert("Phone number can't be blank !")
+      }
+    }else{
+      alert("Email can't be blank !")
+    }
+  }else{
+    alert("Name can't be blank !")
+  }
+}
+function contact() {
+  event.preventDefault();
+  var myFirebase = firebase.database().ref();
+  var contacts = myFirebase.child("contact");
+  contacts
+    .push({
+      Name: document.getElementById("contactName").value,
+      Email: document.getElementById("contactEmail").value,
+      Phone: document.getElementById("contactPhone").value,
+      Query: document.getElementById("contactQuery").value,
+    })
+    .then(() => {
+      alert("Thank You ! Your Query is submitted, we will contact you soon. ");
+      window.location.href="/";
+    });
+}
+
+         </script>

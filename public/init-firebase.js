@@ -1,11 +1,12 @@
+//import serviceAccount from "service.json";
+
 var firebaseConfig = {
-    apiKey: "AIzaSyAmSq2vvs6k8nuwJuG3mvFkUiGK9olysB4  ",
+ 
+    apiKey: "AIzaSyA8t_Ss-J5uTWm9ZiQ5vjk5XqzjLm38DDQ",
     authDomain: "slackanshu.firebaseapp.com",
-    databaseURL: "https://file-upload-deae7.firebaseio.com",
+    databaseURL: "https://slackanshu.firebaseio.com",
     projectId: "slackanshu",
     storageBucket: "slackanshu.appspot.com",
-    messagingSenderId: "146421699965",
-    
+    messagingSenderId: "146421699965"
   };
-  // Initialize Firebase
   firebase.initializeApp(firebaseConfig);

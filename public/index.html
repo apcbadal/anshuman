@@ -5,507 +5,23 @@
 <meta charset='UTF-8'>
 <title>Anshuman </title>
 <meta name="robots" content="noindex">
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="shortcut icon" href="images/anshu.jpg"/>
-
-<meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"style="border-radius:50%">
-
-
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/protectcode.s"></script>
 <link rel="stylesheet" href="css/normalize.css">
-	<link rel="stylesheet" href="css/main.css">
-	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
-
-<style class="INLINE_PEN_STYLESHEET_ID">
-    @import url(https://fonts.googleapis.com/css?family=Varela+Round);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-*, *::after, *::before {
-  box-sizing: border-box;
-}
-
-html, body {
-  height: 100%;
-}
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  line-height: 1.5em;
-  
-  
-}
-
-a {
-  color: #66cc99;
-  text-decoration: none;
-}
-
-.clearfix::after, .clearfix::before {
-  content: " ";
-  display: table;
-}
-
-.clearfix::after {
-  clear: both;
-}
-
-.bold {
-  color: #4a4e51;
-  font-weight: 400;
-}
-
-.resume-wrapper {
-  position: relative;
-  text-align: center;
-  height: 100%;
-}
-
-.container {
-  min-height: 600px;
-}
-
-.profile {
-  background: #fff;
-  width: 40%;
-  float: left;
-  color: #9099a0;
-}
-@media (max-width: 850px) {
-  .profile {
-    width: 100%;
-  }
-}
-.profile .name-wrapper {
-  float: left;
-  width: 60%;
-}
-.profile h1 {
-  font-size: 150%;
-  text-align: left;
-  font-family: 'Varela Round', sans-serif;
-  color: #4a4e51;
-  text-transform: uppercase;
-  line-height: 1em;
-  padding-top: 40px;
-}
-@media (max-width: 1200px) {
-  .profile h1 {
-    padding-top: 20px;
-  }
-}
-@media (max-width: 450px) {
-  .profile h1 {
-    font-size: 1.8em;
-    padding-top: 20px;
-  }
-}
-.profile li {
-  margin-bottom: 10px;
-}
-.profile .picture-resume-wrapper {
-  width: 40%;
-  display: block;
-  float: left;
-}
-@media (max-width: 1200px) {
-  .profile .picture-resume-wrapper {
-    width: 100%;
-  }
-}
-.profile .picture-resume {
-  width: 220px;
-  height: 220px;
-  background-size: cover;
-  border-radius: 50%;
-  margin-right: 0px;
-  display: table;
-  position: relative;
-  vertical-align: middle;
-}
-.profile .picture-resume span {
-  display: table-cell;
-  vertical-align: middle;
-  position: relative;
-  margin: 0 auto;
-  z-index: 10;
-  text-align: center;
-}
-.profile .picture-resume img {
-  border-radius: 50%;
-  width: 130px;
-}
-@media (max-width: 1500px) {
-  .profile .picture-resume img {
-    width: 80px;
-  }
-}
-@media (max-width: 1200px) {
-  .profile .picture-resume img {
-    width: 120px;
-    height: 120px;
-  }
-}
-@media (max-width: 1500px) {
-  .profile .picture-resume {
-    width: 150px;
-    height: 150px;
-  }
-}
-@media (max-width: 1200px) {
-  .profile .picture-resume {
-    width: 200px;
-    height: 200px;
-  }
-}
-@media (max-width: 450px) {
-  .profile .picture-resume {
-    width: 180px;
-    height: 180px;
-  }
-}
-.profile .contact-info {
-  margin-top: 100px;
-  font-weight: 300;
-}
-@media (max-width: 1200px) {
-  .profile .contact-info {
-    margin-top: 70px;
-  }
-}
-@media (max-width: 450px) {
-  .profile .contact-info {
-    margin-top: 50px;
-  }
-}
-.profile .list-titles {
-  float: left;
-  text-align: left;
-  font-weight: 600;
-  width: 40%;
-  color: #4a4e51;
-}
-.profile .list-content {
-  float: left;
-  width: 60%;
-  text-align: left;
-  font-weight: 300;
-}
-.profile .contact-presentation {
-  text-align: left;
-  font-weight: 300;
-  margin-top: 100px;
-  margin-bottom: 100px;
-}
-@media (max-width: 1200px) {
-  .profile .contact-presentation {
-    margin-top: 70px;
-    margin-bottom: 70px;
-  }
-}
-@media (max-width: 850px) {
-  .profile .contact-presentation {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-}
-.profile svg {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.profile .st0, .profile .st1 {
-  fill: #66cc99;
-}
-
-.experience {
-  background: #3d3e42;
-  width: 60%;
-  float: left;
-  position: relative;
-  color: #9099a0;
-  font-weight: 300;
-  min-height: 100%;
-  min-height: 100vh;
-}
-@media (max-width: 850px) {
-  .experience {
-    width: 100%;
-  }
-}
-.experience h3.experience-title {
-  color: #66cc99;
-  text-align: left;
-  text-transform: uppercase;
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  font-weight: 400;
-}
-.experience .company-wrapper {
-  width: 30%;
-  float: left;
-  text-align: left;
-  padding-right: 5%;
-  margin-bottom: 60px;
-}
-@media (max-width: 450px) {
-  .experience .company-wrapper {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
-.experience .job-wrapper {
-  width: 70%;
-  float: left;
-  text-align: left;
-  padding-right: 5%;
-  margin-bottom: 60px;
-}
-@media (max-width: 450px) {
-  .experience .job-wrapper {
-    width: 100%;
-    margin-bottom: 40px;
-  }
-}
-.experience .experience-title {
-  color: white;
-  margin-bottom: 15px;
-}
-
-.section-padding {
-  padding: 60px 60px 40px 40px;
-}
-@media (max-width: 850px) {
-  .section-padding {
-    padding: 80px 15% 40px 10%;
-  }
-}
-@media (max-width: 450px) {
-  .section-padding {
-    padding: 40px 10% 20px 5%;
-  }
-}
-
-.section-wrapper {
-  width: 50%;
-  float: left;
-  text-align: left;
-  color: #9099a0;
-  font-weight: 300;
-  margin-bottom: 20px;
-}
-@media (max-width: 450px) {
-  .section-wrapper {
-    width: 100%;
-  }
-}
-.section-wrapper:nth-child(3) {
-  padding-right: 8%;
-}
-.section-wrapper h3.section-title {
-  color: #66cc99;
-  text-align: left;
-  text-transform: uppercase;
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  font-weight: 400;
-}
-.section-wrapper .skill-percentage {
-  margin-bottom: 10px;
-  position: relative;
-}
-.section-wrapper .skill-percentage::after {
-  content: "";
-  width: 100%;
-  height: 6px;
-  background: #4a4e51;
-  display: block;
-  margin-top: 3px;
-}
-.section-wrapper .skill-percentage::before {
-  content: "";
-  height: 6px;
-  background: #66cc99;
-  position: absolute;
-  margin-top: 3px;
-  bottom: 0;
-}
-.section-wrapper .skill-percentage:nth-child(1)::before {
-  width: 90%;
-  -webkit-animation: skill_1 0.6s ease;
-          animation: skill_1 0.6s ease;
-}
-.section-wrapper .skill-percentage:nth-child(2)::before {
-  width: 80%;
-  -webkit-animation: skill_2 0.6s ease;
-          animation: skill_2 0.6s ease;
-}
-.section-wrapper .skill-percentage:nth-child(3)::before {
-  width: 70%;
-  -webkit-animation: skill_3 0.6s ease;
-          animation: skill_3 0.6s ease;
-}
-.section-wrapper .skill-percentage:nth-child(4)::before {
-  width: 55%;
-  -webkit-animation: skill_4 0.6s ease;
-          animation: skill_4 0.6s ease;
-}
-.section-wrapper .skill-percentage:nth-child(5)::before {
-  width: 55%;
-  -webkit-animation: skill_5 0.6s ease;
-          animation: skill_5 0.6s ease;
-}
-.section-wrapper .skill-percentage:nth-child(6)::before {
-  width: 60%;
-  -webkit-animation: skill_6 0.6s ease;
-          animation: skill_6 0.6s ease;
-}
-.section-wrapper .skill-percentage:nth-child(7)::before {
-  width: 60%;
-  -webkit-animation: skill_7 0.6s ease;
-          animation: skill_7 0.6s ease;
-}
-.section-wrapper .skill-percentage:nth-child(8)::before {
-  width: 70%;
-  -webkit-animation: skill_8 0.6s ease;
-          animation: skill_8 0.6s ease;
-}
-
-@-webkit-keyframes skill_1 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 90%;
-  }
-}
-
-@keyframes skill_1 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 90%;
-  }
-}
-@-webkit-keyframes skill_2 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 80%;
-  }
-}
-@keyframes skill_2 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 80%;
-  }
-}
-@-webkit-keyframes skill_3 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
-@keyframes skill_3 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
-@-webkit-keyframes skill_4 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 55%;
-  }
-}
-@keyframes skill_4 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 55%;
-  }
-}
-@-webkit-keyframes skill_5 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 55%;
-  }
-}
-@keyframes skill_5 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 55%;
-  }
-}
-@-webkit-keyframes skill_6 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 60%;
-  }
-}
-@keyframes skill_6 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 60%;
-  }
-}
-@-webkit-keyframes skill_7 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 60%;
-  }
-}
-@keyframes skill_7 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 60%;
-  }
-}
-@-webkit-keyframes skill_8 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
-@keyframes skill_8 {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 70%;
-  }
-}
-#demo-content {
-		padding-top: 1px;
-	}
-  </style>
-
+<link rel ="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/contactus.css">
+<link rel="stylesheet" href="css/resume.css">
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-database.js"></script>
+<script src="init-firebase.js"></script>
 </head>
 <body>
   <div id="demo-content">
@@ -518,7 +34,26 @@ a {
 
 		</div>
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<nav>
+  <div class="logo">
+  <h4>Anshuman Badal</h4>
+  </div>
+  <ul class="nav-links">
+  <li><a href="#">Home</a></li>
+  <li><a href=#about>About</a></li>
+  <li><a href=#projects>Projects</a></li>
+  <li><a href="" id="btnOpenForm">Contact</a></li>
+  <li><a href="login.html">Login</a></li>
+  
+
+  </ul>
+  <div class="burger">
+  <div class="line1"></div>
+  <div class="line2"></div>
+  <div class="line3"></div>
+  </div>
+  </nav>
 <div class="resume-wrapper">
 <section class="profile section-padding">
 <div class="container">
@@ -551,7 +86,7 @@ a {
 </div>
 <div class="clearfix"></div>
 </div>
-<div class="name-wrapper">
+<div class="name-wrapper"id="about">
 <h1>Anshuman Pd <br />Choudhary Badal</h1>
 </div>
 <div class="clearfix"></div>
@@ -621,7 +156,7 @@ Sep 2016 - Present<p>CGPA : 7.4</p>
 </div>
 </div>
 <div class="container">
-<h3 class="experience-title">Projects</h3>
+<h3 class="experience-title"id="projects">Projects</h3>
 <div class="experience-wrapper">
 <div class="company-wrapper clearfix">
 <div class="experience-title">Online Attendance App</div> 
@@ -688,35 +223,72 @@ Competition at GCE, Gaya.</p>
 </section>
 <div class="clearfix"></div>
 </div>
- Upload Files<br />
-<input type="file" id="files" multiple /><br /><br />
-<button id="send">Upload</button>
-<p id="uploading"></p>
-<progress value="0" max="100" id="progress"
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
- <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+<div class="form-popup-bg">
+  <div class="form-container">
+  <button id="btnCloseForm" class="close-button">X</button>
+  <h1>Contact Us</h1>
+  <p>For more information. Please complete this form.</p>
+  <form>
+  <div class="form-group">
+  <label for="">Name</label>
+  <input type="text" class="form-control"id="contactName" />
+  </div>
+  <div class="form-group">
+  <label for="">E-Mail Address</label>
+  <input class="form-control" type="text" id="contactEmail"/>
+  </div>
+  <div class="form-group">
+  <label for="">Phone Number</label>
+  <input class="form-control" type="text"id="contactPhone" />
+  </div>
+  <div class="form-group">
+    <label for="">Your Query</label>
+    <textarea class="form-control" type="textarea"id="contactQuery" ></textarea>
+    </div>
+  <input type="submit" onclick="checkCondition()"></input>
+  </form>
+  </div>
+  </div>
+  <script>
+function checkCondition(){
+  event.preventDefault();
+  if(document.getElementById("contactName").value!=0){
+    if(document.getElementById("contactEmail").value!=0){
+      if(document.getElementById("contactPhone").value!=0){
+        if(document.getElementById("contactQuery").value!=0){
+          contact();
+        }
+        else{
+          alert("Query can't be blank !")
+        }
+      }else{
+        alert("Phone number can't be blank !")
+      }
+    }else{
+      alert("Email can't be blank !")
+    }
+  }else{
+    alert("Name can't be blank !")
+  }
+}
+    function contact(){
+    event.preventDefault();
+    var myFirebase = firebase.database().ref();
+    var contacts = myFirebase.child("contact");
+    contacts.push({
+    Name: document.getElementById("contactName").value,
+    Email: document.getElementById("contactEmail").value,
+    Phone : document.getElementById("contactPhone").value,
+    Query:document.getElementById("contactQuery").value
+  }).then(()=>{
+    alert("Thank You ! Your Query is submitted, we will contact you soon. ");
+    window.location.href="/";
+  });
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-https://firebase.google.com/docs/web/setup#available-libraries -->
-
-<script>
-// Your web app's Firebase configuration
-var firebaseConfig = {
-apiKey: "AIzaSyCd_rU4ft1CCdYZJCAjM8OyAVVfZ8I14LQ",
-authDomain: "file-upload-deae7.firebaseapp.com",
-databaseURL: "https://file-upload-deae7.firebaseio.com",
-projectId: "file-upload-deae7",
-storageBucket: "file-upload-deae7.appspot.com",
-messagingSenderId: "772980880174",
-appId: "1:772980880174:web:273969e0f628410853c0bf"
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-</script>
+    }
+  </script>
 <script id="INLINE_PEN_JS_ID">
     
-
 var select = function (s) {
   return document.querySelector(s);
 };
@@ -751,8 +323,61 @@ for (var i = 0; i < 20; i++) {if (window.CP.shouldStopExecution(0)) break;
 tl.seek(50);
     
   </script>
-  
-  
+<script id="rendered-js">
+const navSlide = () => {
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav-links');
+  const navLinks = document.querySelectorAll('.nav-links li');
+
+  //Toggle Nav
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('nav-active');
+
+    //Animate Links
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = '';
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+
+      }
+    });
+
+    //burger animation
+    burger.classList.toggle('toggle');
+
+
+  });
+
+};
+
+navSlide();
+function closeForm() {
+  $('.form-popup-bg').removeClass('is-visible');
+}
+
+$(document).ready(function ($) {
+
+  /* Contact Form Interactions */
+  $('#btnOpenForm').on('click', function (event) {
+    event.preventDefault();
+
+    $('.form-popup-bg').addClass('is-visible');
+  });
+
+  //close popup when clicking x or off popup
+  $('.form-popup-bg').on('click', function (event) {
+    if ($(event.target).is('.form-popup-bg') || $(event.target).is('#btnCloseForm')) {
+      event.preventDefault();
+      $(this).removeClass('is-visible');
+    }
+  });
+
+
+
+});
+
+    </script>
 	<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 	<script src="js/main.js"></script>
 </body>
