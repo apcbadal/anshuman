@@ -1,4 +1,8 @@
-#My_Resume
-Created using Html css and javaScript
-also deployed on Firebase Hosting
-also visit https://apcbadal.github.io
+# My Resume.  
+Created using HTML CSS and JS.    \
+This is being hosted on https://slackanshu.web.app as well.   
+## Features.  
+Upload and download File on Firebase Storage
+ 
+  
+
